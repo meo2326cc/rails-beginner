@@ -18,13 +18,13 @@
         </tr>
       </thead>
       <tbody class="bg-white divide-y divide-gray-200">
-        <% @task.each do |i| %>
+        <% @task.each do |table_item| %>
           <tr>
-            <td class="border-t border-gray-200 px-6 py-4"><%= i.task_name %></td>
-            <td class="border-t border-gray-200 px-6 py-4"><%= i.description %></td>
+            <td class="border-t border-gray-200 px-6 py-4"><%= table_item.task_name %></td>
+            <td class="border-t border-gray-200 px-6 py-4"><%= table_item.description %></td>
             <td class="border-t border-gray-200 px-6 py-4">
-              <%= link_to "編輯", i , class: "bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded "%>
-              <%= link_to '刪除', i ,
+              <%= link_to "編輯", table_item , class: "bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded "%>
+              <%= link_to '刪除', table_item ,
               data: {turbo_method: :delete, turbo_confirm: '確定刪除？'} , class: "bg-red-500 hover:bg-red-500 text-white py-2 px-4 rounded " %>
               
             </td>
