@@ -1,0 +1,26 @@
+zh_TW:
+  title: "任務清單"
+  add_task: "新增任務"
+  table_title: "標題"
+  table:
+    title: "標題"
+    description: "內容"
+    actions: "操作"
+    action_edit: "編輯"
+    action_delete: "刪除"
+    delete_modal: "確定刪除？"
+  new:
+    title: "新增任務"
+    form_title: "標題"
+    form_description: "內容"
+    form_submit: "新增任務"
+  update:
+    title: "編輯清單"
+    form_title: "標題"
+    form_description: "內容"
+    form_submit: "編輯任務"
+    go_back: "返回"
+  flash_msg:
+    new: "成功新增任務"
+    update: "成功修改任務"
+    delete: "成功刪除任務"
