@@ -24,8 +24,10 @@ module RailsBeginner
     #i18n
     #
     I18n.available_locales = [:en, :zh_TW]
-    config.i18n.default_locale = :zh_TW
 
+    I18n.load_path += Dir[Rails.root.join('lib', 'locale', '*.{rb,yml}')]
+
+    config.i18n.default_locale = :zh_TW
     # config.time_zone = "Central Time (US & Canada)"
     config.time_zone = "Taipei"
     # config.eager_load_paths << Rails.root.join("extras")

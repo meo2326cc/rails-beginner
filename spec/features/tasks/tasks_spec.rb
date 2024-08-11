@@ -12,7 +12,7 @@ RSpec.describe "View", type: :feature do
         visit(tasks_path)
         click_link("新增任務")      
     end
-        it { is_expected.to have_current_path(new_task_path) }
+        it { is_expected.to have_current_path(new_task_path( locale: 'zh_TW' )) }
     end
   
 
@@ -22,7 +22,7 @@ RSpec.describe "View", type: :feature do
       visit(new_task_path)
       fill_in( '標題', with: task.task_name)
       fill_in( '內容', with: task.description)
-      click_button('建立任務')
+      click_button('新增任務')
     end
 
     it { is_expected.to have_text('成功新增任務')   }
@@ -38,7 +38,7 @@ RSpec.describe "View", type: :feature do
         expect(page).to have_text('編輯清單')
         fill_in( '標題', with: task.task_name)
         fill_in( '內容', with: task.description)
-        click_button '更新文章'   
+        click_button '編輯任務'   
       end
 
       it { is_expected.to have_text('成功修改任務') }
@@ -56,7 +56,7 @@ RSpec.describe "View", type: :feature do
         end
       end
       
-      it { is_expected.to have_text('資料已刪除!') }
+      it { is_expected.to have_text('成功刪除任務') }
   end
 
 end

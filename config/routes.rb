@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   root to:"tasks#index"
   
+  # config/routes.rb
   resources :tasks
+
   # Defines the root path route ("/")
   # root "posts#index"
 end
