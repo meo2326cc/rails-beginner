@@ -1,3 +1,30 @@
+en:
+  title: "Todo list"
+  add_task: "Add Task"
+  table_title: "Title"
+  table:
+    title: "Title"
+    description: "Description"
+    actions: "Actions"
+    action_edit: "edit"
+    action_delete: "delete"
+    delete_modal: "delete task?"
+  new:
+    title: "Add task"
+    form_title: "title"
+    form_description: "description"
+    form_submit: "create new task"
+  update:
+    title: "Edit task"
+    form_title: "title"
+    form_description: "description"
+    form_submit: "updete task"
+    go_back: "go back"
+  flash_msg:
+    new: "added task successfully"
+    edit: "edited task successfully"
+    delete: "deleted task successfully"
+
 # Files in the config/locales directory are used for internationalization and
 # are automatically loaded by Rails. If you want to use locales other than
 # English, add the necessary files in this directory.
@@ -27,5 +54,3 @@
 #       "yes": yup
 #       enabled: "ON"
 
-en:
-  hello: "Hello world"
