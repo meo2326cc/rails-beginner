@@ -5,6 +5,7 @@ zh_TW:
   table:
     title: "標題"
     description: "內容"
+    created_at: "建立時間"
     actions: "操作"
     action_edit: "編輯"
     action_delete: "刪除"
@@ -24,3 +25,5 @@ zh_TW:
     new: "成功新增任務"
     update: "成功修改任務"
     delete: "成功刪除任務"
+  validation:
+    error_msg: "欄位為必填"
