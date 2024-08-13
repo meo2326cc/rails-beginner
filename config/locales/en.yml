@@ -5,6 +5,7 @@ en:
   table:
     title: "Title"
     description: "Description"
+    create_at: "created at"
     actions: "Actions"
     action_edit: "edit"
     action_delete: "delete"
