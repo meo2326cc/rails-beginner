@@ -25,6 +25,8 @@ en:
     new: "added task successfully"
     edit: "edited task successfully"
     delete: "deleted task successfully"
+  validation:
+    error_msg: "can't be blank"
 
 # Files in the config/locales directory are used for internationalization and
 # are automatically loaded by Rails. If you want to use locales other than

@@ -1,10 +1,10 @@
 <h2><%= t('update.title')%></h2>
 
 <div class="container mx-auto max-w-80">
-<%= form_with(model: @task, local: true, class: "py-10") do |form|  %>
+<%= form_with(model: @task, data: { turbo: false }, class: "py-10", id: 'task-form') do |form|  %>
   <% if @task.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@task.errors.count, "error") %> 阻止了這篇文章被保存:</h2>
+    <div id="error_explanation" class="bg-red-200 p-2 ">
+      <h2><%= pluralize(@task.errors.count, "error") %></h2>
 
       <ul>
         <% @task.errors.full_messages.each do |message| %>
