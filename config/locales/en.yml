@@ -6,6 +6,7 @@ en:
     title: "Title"
     description: "Description"
     create_at: "created at"
+    done_at: "done at"
     actions: "Actions"
     action_edit: "edit"
     action_delete: "delete"
@@ -15,12 +16,14 @@ en:
     form_title: "title"
     form_description: "description"
     form_submit: "create new task"
+    done_at: "done at"
   update:
     title: "Edit task"
     form_title: "title"
     form_description: "description"
     form_submit: "updete task"
     go_back: "go back"
+    done_at: "done at"
   flash_msg:
     new: "added task successfully"
     edit: "edited task successfully"
