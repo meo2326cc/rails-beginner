@@ -13,12 +13,7 @@ class TasksController < ApplicationController
 
 
   def create
-
-    date = task_params[:date]
-    time = task_params[:time]
-    update_data = task_params.except(:date, :time)
-    update_data[:done_at] = Time.zone.parse("#{date} #{time}")
-    @task = Task.new(update_data)
+    @task = Task.new(task_params)
 
     if @task.save
       flash[:notice] = t('flash_msg.new')
@@ -29,15 +24,10 @@ class TasksController < ApplicationController
   end
 
   def update 
-    
-    date = task_params[:date]
-    time = task_params[:time]
 
     @task = Task.find(params[:id])
-    update_data = task_params.except(:date, :time)
-    update_data[:done_at] = Time.zone.parse("#{date} #{time}")
     
-    if @task.update(update_data)
+    if @task.update(task_params)
       flash[:notice] = t('flash_msg.update')
       redirect_to action: 'index' 
     else
@@ -56,7 +46,7 @@ class TasksController < ApplicationController
   private
   
   def task_params
-    params.require(:task).permit(:task_name, :description, :date , :time)
+    params.require(:task).permit(:task_name, :description, :done_at)
   end
 
 end 

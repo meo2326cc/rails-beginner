@@ -52,7 +52,7 @@ RSpec.describe "View", type: :feature do
       visit(new_task_path)
       fill_in( '標題', with: task_with_time[:task_name])
       fill_in( '內容', with: task_with_time[:description])
-      fill_in(  id: 'task_date', with:  task_with_time[:date])
+      fill_in(  id: 'task_done_at', with:  task_with_time[:date])
       click_button('新增任務')
     end
 
