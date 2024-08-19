@@ -1,15 +1,11 @@
 <div class="container mx-auto px-4 py-8">
   <h2 class="text-3xl font-bold mb-6 text-center text-gray-800"><%= t('title')  %></h2>
   <div><%= Time.now %></div>
-  
-
   <!--flash-->
-<% if flash[:notice] %>
-  <div class="bg-green-200 p-4 rounded-sm mb-4"><%= flash.notice %></div>
-<% end %>
-
+  <% if flash[:notice] %>
+    <div class="bg-green-200 p-4 rounded-sm mb-4"><%= flash.notice %></div>
+  <% end %>
   <%= link_to t('add_task') , new_task_path , class: 'inline-block bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded mb-4' %>
-
   <div class="overflow-x-auto bg-white rounded-md shadow overflow-y-auto">
     <table class="border-collapse table-auto w-full whitespace-no-wrap bg-white table-striped relative">
       <thead>
@@ -17,7 +13,7 @@
           <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-3 text-gray-600 font-bold tracking-wider text-xs"><%= t('table.title') %></th>
           <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-3 text-gray-600 font-bold tracking-wider text-xs"><%= t('table.description') %></th>
           <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-3 text-gray-600 font-bold tracking-wider text-xs"><%= t('table.created_at') %></th>
-                    <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-3 text-gray-600 font-bold tracking-wider text-xs"><%= t('table.done_at') %></th>
+          <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-3 text-gray-600 font-bold tracking-wider text-xs"><%= t('table.done_at') %></th>
           <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-3 text-gray-600 font-bold tracking-wider text-xs"><%= t('table.actions') %></th>
         </tr>
       </thead>
