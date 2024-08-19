@@ -1,15 +1,11 @@
 <div class="container mx-auto px-4 py-8">
   <h2 class="text-3xl font-bold mb-6 text-center text-gray-800"><%= t('title')  %></h2>
   <div><%= Time.now %></div>
-  
-
   <!--flash-->
-<% if flash[:notice] %>
-  <div class="bg-green-200 p-4 rounded-sm mb-4"><%= flash.notice %></div>
-<% end %>
-
+  <% if flash[:notice] %>
+    <div class="bg-green-200 p-4 rounded-sm mb-4"><%= flash.notice %></div>
+  <% end %>
   <%= link_to t('add_task') , new_task_path , class: 'inline-block bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded mb-4' %>
-
   <div class="overflow-x-auto bg-white rounded-md shadow overflow-y-auto">
     <table class="border-collapse table-auto w-full whitespace-no-wrap bg-white table-striped relative">
       <thead>
@@ -17,6 +13,7 @@
           <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-3 text-gray-600 font-bold tracking-wider text-xs"><%= t('table.title') %></th>
           <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-3 text-gray-600 font-bold tracking-wider text-xs"><%= t('table.description') %></th>
           <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-3 text-gray-600 font-bold tracking-wider text-xs"><%= t('table.created_at') %></th>
+          <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-3 text-gray-600 font-bold tracking-wider text-xs"><%= t('table.done_at') %></th>
           <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-3 text-gray-600 font-bold tracking-wider text-xs"><%= t('table.actions') %></th>
         </tr>
       </thead>
@@ -26,11 +23,11 @@
             <td class="border-t border-gray-200 px-6 py-4"><%= table_item.task_name %></td>
             <td class="border-t border-gray-200 px-6 py-4"><%= table_item.description %></td>
             <td class="border-t border-gray-200 px-6 py-4"><%= table_item.created_at %></td>
+            <td class="border-t border-gray-200 px-6 py-4"><%= table_item.done_at == nil ? '未指定日期' : table_item.done_at %></td>
             <td class="border-t border-gray-200 px-6 py-4">
               <%= link_to t('table.action_edit'), task_path(table_item) , class: "bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded "%>
               <%= link_to t('table.action_delete'), task_path(table_item) ,
               data: {turbo_method: :delete, turbo_confirm: t('table.delete_modal')} , class: "bg-red-500 hover:bg-red-500 text-white py-2 px-4 rounded " %>
-              
             </td>
           </tr>
         <% end %>

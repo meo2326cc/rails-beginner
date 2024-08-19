@@ -24,6 +24,7 @@ class TasksController < ApplicationController
   end
 
   def update 
+
     @task = Task.find(params[:id])
     
     if @task.update(task_params)
@@ -45,7 +46,7 @@ class TasksController < ApplicationController
   private
   
   def task_params
-    params.require(:task).permit(:task_name, :description)
+    params.require(:task).permit(:task_name, :description, :done_at)
   end
 
 end 
